@@ -2,28 +2,28 @@ $(document).ready(function()
 {
 
 	// Gestion des tailles
-
-	var taille1 = 185;
-	var taille2 = 165;
-
-	$('.p:nth-child(1)').find('.taille').text(taille1);
-	$('.p:nth-child(2)').find('.taille').text(taille2);
-
-	$('.p:nth-child(1)').css('height', function() {
-		return ((taille1 - 5) * 100) / 225 + "%";
-	});
-
-	$('.p:nth-child(2)').css('height', function() {
-		return ((taille2 - 5) * 100) / 225 + "%";
-	});
-
-	$('.p:nth-child(1) img').css('height', function() {
-		return (taille1 * 25) / 225 + "%";
-	});
-
-	$('.p:nth-child(2) img').css('height', function() {
-		return (taille2 * 25) / 225 + "%";
-	});
+	//
+	// var taille1 = 185;
+	// var taille2 = 165;
+	//
+	// $('.p:nth-child(1)').find('.taille').text(taille1);
+	// $('.p:nth-child(2)').find('.taille').text(taille2);
+	//
+	// $('.p:nth-child(1)').css('height', function() {
+	// 	return ((taille1 - 5) * 100) / 225 + "%";
+	// });
+	//
+	// $('.p:nth-child(2)').css('height', function() {
+	// 	return ((taille2 - 5) * 100) / 225 + "%";
+	// });
+	//
+	// $('.p:nth-child(1) img').css('height', function() {
+	// 	return (taille1 * 25) / 225 + "%";
+	// });
+	//
+	// $('.p:nth-child(2) img').css('height', function() {
+	// 	return (taille2 * 25) / 225 + "%";
+	// });
 
 
 

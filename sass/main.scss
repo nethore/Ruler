@@ -4,7 +4,7 @@ $secondary-color: #c86bd4;
 
 $first-people: #f03da2;
 $second-people: #86ce34;
-$third-people: #fff;
+$third-people: #f78c31;
 
 /* SVG Fonts */
 * {  box-sizing: border-box; }
@@ -13,6 +13,7 @@ $third-people: #fff;
 
 html, body {
   height: 100%;
+  font-size: 16px;
 }
 
 input:focus,
@@ -30,7 +31,6 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
 }
 
 #menu {
@@ -146,6 +146,7 @@ body {
     color: $primary-color;
     text-transform: uppercase;
     padding-left: 7px;
+    padding-top: 7px;
   }
   i {
     color: $primary-color;
@@ -228,7 +229,7 @@ header .logo i {
   box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
 }
 
-.content {
+.window {
   overflow: hidden;
   position: absolute;
   top:0;
@@ -293,33 +294,87 @@ header .logo i {
     width:100%;
     cursor:pointer;
     border:0;
-    border-bottom: 3px solid #009fe0;
-    background: $primary-color;
+    border-bottom: 3px solid #cbcbcb;
+    background: #dedede;
     padding:10px;
     font-weight: 300;
-    color: #fff;
+    color: #6a6a6a;
   }
   input[type=submit]:active {
-    border-top: 3px solid #009fe0;
+    border-top: 3px solid #cbcbcb;
     border-bottom: 0;
+  }
+  .btn-top {
+    margin-top:20px;
   }
 }
 
-
-
 .persos {
-  width: 100%;
-  height: 100%;
   position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 55px;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
+
 .p {
-  width: 25%;
-  bottom: 40px;
-  display: block;
+  width:20%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: flex-end;
+}
+.p:first-child {
+  margin-left: 80px;
+  .body{
+    background : url("../svg/man-pink.svg") no-repeat bottom center ;
+    color: $first-people;
+    background-size: contain;
+  }
+  .body-w{
+    background : url("../svg/woman-pink.svg") no-repeat bottom center ;
+    color: $first-people;
+    background-size: contain;
+  }
+}
+.p:nth-child(2) {
+  margin-left: 25px;
+  .body{
+    background : url("../svg/man-green.svg") no-repeat bottom center ;
+    background-size: contain;
+    color: $second-people;
+  }
+  .body-w{
+    background : url("../svg/woman-green.svg") no-repeat bottom center ;
+    background-size: contain;
+    color: $second-people;
+  }
+}
+.p:nth-child(3) {
+  margin-left: 25px;
+  .body{
+    background : url("../svg/man-orange.svg") no-repeat bottom center ;
+    background-size: contain;
+    color: $third-people;
+  }
+  .body-w{
+    background : url("../svg/woman-orange.svg") no-repeat bottom center ;
+    background-size: contain;
+    color: $third-people;
+  }
+}
+
+.body, .body-w {
+  margin-top: auto;
+  margin-bottom: 25px;
+  width: 100%;
   text-align: center;
+  bottom: 0;
   .size {
     margin-top:-50px;
     margin-bottom: 20px;
@@ -329,49 +384,19 @@ header .logo i {
   .cm {
     font-weight: 300;
   }
-}
-.p:first-child {
-  background : url("../svg/man-pink.svg") no-repeat bottom center ;
-  color: $first-people;
-  background-size: contain;
-  height: 80%;
-  margin-left: 80px;
-}
-.p:nth-child(2) {
-  background : url("../svg/man-green.svg") no-repeat bottom center ;
-  background-size: contain;
-  color: $second-people;
-  height: 80%;
-  margin-left: 25px;
-}
-.p:nth-child(3) {
-  background : url("../svg/man-pink.svg") no-repeat bottom center ;
-  background-size: contain;
-  margin-left: 25px;
+  img {
+  height: 18%;
+  margin-top: 0px;
+  }
 }
 
-.p:first-child > img {
-  height: 20%;
-  margin-top: -10px;
-}
-.p:nth-child(2) > img {
-  height: 20%;
-  margin-top: -10px;
-}
-
-nav {
-  position: absolute;
+.badge-nom {
+  margin-bottom: -25px;
   display: flex;
-  bottom: -20px;
-  width: 100%;
-}
-
-nav div {
-  display: flex;
-  margin-left: 25px;
   padding: 12px 20px;
-  width: 25%;
+  width: 100%;
   color: #fff;
+  z-index: 1000;
   -moz-box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.3);
   -o-box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.3);
@@ -382,19 +407,18 @@ nav div {
   display: none;
 }
 
-nav > div:first-child {
-  margin-left: 80px;
+.p:first-child .badge-nom{
   background: $first-people;
 }
-nav > div:nth-child(2) {
+.p:nth-child(2) .badge-nom{
   background: $second-people;
 }
-nav > div:nth-child(3) {
+.p:nth-child(3) .badge-nom{
   background: $third-people;
 }
 
 
-nav > div p {
+.badge-nom p {
   flex-grow: 1;
   font-weight: 300;
   font-size: 1rem;
@@ -402,16 +426,34 @@ nav > div p {
   margin: 2px 0 0 10px;
 }
 
-nav > div a {
+.badge-nom a {
   color: rgba(255, 255, 255, 0.5);
 }
-nav > div a:hover, nav > div a:active, nav > div a:focus {
+.badge-nom a:hover, .badge-nom a:active, .badge-nom a:focus {
   color: #fff;
 }
 
-nav div i {
+.badge-nom i {
   font-size: 1.8rem;
   vertical-align: top;
+}
+
+.welcome {
+  color: #fff;
+  align-self: center;
+  margin-left:100px;
+  h3 {
+    font-size: 3.4rem;
+  }
+  h4 i {
+    margin-left: 10px;
+  }
+  h3, h4 {
+    font-weight: 300;
+  }
+  span {
+    font-weight: bold;
+  }
 }
 
 .lines {
@@ -455,6 +497,16 @@ footer p {
 
 /* Plugins */
 
+.dropdown-menu {
+  border-radius: 0;
+  border: none;
+  min-width: 200px;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover  {
+  background-color: $primary-color;
+}
+
 .onoffswitch {
     position: relative; width: 50px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
@@ -471,6 +523,7 @@ footer p {
 }
 .onoffswitch-label:before {
     content: "";
+    height: 22px;
     display: block; width: 22px; margin: 0px;
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;

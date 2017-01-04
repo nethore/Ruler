@@ -1,0 +1,42 @@
+[
+  {
+    "id": 0,
+    "firstname": "Nicolas",
+    "lastname": "Sarkozy",
+    "gender": true,
+    "picture": "sarkozy.png",
+    "size": 165
+  },
+  {
+    "id": 1,
+    "firstname": "Barack",
+    "lastname": "Obama",
+    "gender": true,
+    "picture": "obama.png",
+    "size": 185
+  },
+  {
+    "id": 2,
+    "firstname": "Donald",
+    "lastname": "Trump",
+    "gender": true,
+    "picture": "trump.png",
+    "size": 191
+  },
+  {
+    "id": 3,
+    "firstname": "Segolene",
+    "lastname": "Royale",
+    "gender": false,
+    "picture": "blank.png",
+    "size": 167
+  },
+  {
+    "id": 4,
+    "firstname": "Hilary",
+    "lastname": "Clinton",
+    "gender": false,
+    "picture": "clinton.png",
+    "size": 169
+  }
+]

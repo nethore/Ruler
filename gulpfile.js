@@ -92,10 +92,9 @@ gulp.task('js', function() {
 
 // Default task to be run with `gulp`
 gulp.task('default', ['browser-sync', 'css', 'js'], function() {
-    gulp.watch("sass/**/*.scss", ['css']); // watch permet de regarder les changements de fichier et lancer les tâches que l'on souhaite
+    gulp.watch("sass/*.scss", ['css', 'browser-reload']); // watch permet de regarder les changements de fichier et lancer les tâches que l'on souhaite
     // gulp.watch("assets/images/", ['images']);
-    gulp.watch("js/**/**/*.js", ['js']);
+    gulp.watch("js/*.js", ['js', 'browser-reload']);
     // gulp.watch(["*.html", "partials/*.html"]).on('change', browserSync.reload); //reload on HTML
-    gulp.src('*').pipe(size());
 
 });

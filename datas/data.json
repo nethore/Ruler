@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "firstname": "Nicolas",
+    "lastname": "Sarkozy",
+    "gender": true,
+    "picture": "sarkozy.png",
+    "size": 165
+  },
+  {
+    "id": 1,
+    "firstname": "Barack",
+    "lastname": "Obama",
+    "gender": false,
+    "picture": "obama.png",
+    "size": 185
+  },
+  {
+    "id": 2,
+    "firstname": "Donald",
+    "lastname": "Trump",
+    "gender": true,
+    "picture": "trump.png",
+    "size": 180
+  }
+]
