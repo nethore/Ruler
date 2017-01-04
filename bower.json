@@ -1,0 +1,17 @@
+{
+  "name": "Ruler",
+  "authors": [
+    "nethore <nikolas.ethore@gmail.com>"
+  ],
+  "description": "Who is the Tallest - 3WA Project",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

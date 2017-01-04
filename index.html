@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ruler - Who is the tallest ?</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="dist/css/main.min.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="menu">
+      <a class="close">
+        <i class="icon-close"></i>
+      </a>
+  		<ul>
+  			<li class="active"><a href="#">Accueil</a></li>
+  			<li><a href="#">Articles</a></li>
+  			<li><a href="#">Votes</a></li>
+  			<li><a href="#">Blog</a></li>
+  		</ul>
+	 </div>
+   <div id="help">
+     <a class="close-help">
+       <i class="icon-close"></i>
+     </a>
+    <div class="help">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+ </div>
+
+    <header>
+      <div class="menu">
+        <a href="javascript:;" class="menu_btn"><i class="icon-menu"></i></a>
+      </div>
+      <div class="logo">
+        <i class="icon-ruler"></i>
+        <h3>Ruler</h3>
+      </div>
+      <div class="help">
+        <a  href="javascript:;" class="help_btn"><i class="icon-help"></i></a>
+      </div>
+    </header>
+    <main>
+      <div class="compare">
+        <div class="content">
+          <div class="lines">
+            <ul>
+              <li><p>200</p></li>
+              <li><p>175</p></li>
+              <li><p>150</p></li>
+              <li><p>125</p></li>
+              <li><p>100</p></li>
+              <li><p>75</p></li>
+              <li><p>50</p></li>
+              <li><p>25</p></li>
+              <li><p>0</p></li>
+            </ul>
+          </div>
+          <div class="persos">
+            <div class="p">
+              <p class="size">
+                <span class="taille"></span><span class="cm"> cm</span>
+              </p>
+              <img src="img/obama.png">
+            </div>
+            <div class="p">
+              <p class="size">
+                <span class="taille"></span><span class="cm"> cm</span>
+              </p>
+              <img src="img/sarkozy.png">
+            </div>
+          </div>
+          <div id="admin">
+            <a href="javascript:;" class="close-add">
+              <p class="txt-admin">Ajouter une<br/>personnalité</p><i class="icn-admin icon-add-man"></i>
+            </a>
+            <div>
+              <h4>Ajouter une personnalité</h4>
+              <p>
+                Recherchez une personnalité dans le champ ci-dessous pour pouvoir comparer sa taille.
+              </p>
+              <div class="recherche">
+                <form>
+                  <input type="text" name="perso" placeholder="Recherche une personnalité">
+                </form>
+              </div>
+            </div>
+            <div>
+              <h4>Ajouter votre propre avatar</h4>
+              <p>
+                Si vous souhaitez comparer votre propre taille ou celle de vos amis avec nos célébrités, remplissez les champs ci dessous :
+              </p>
+              <form>
+                <div class="recherche">
+                    <input type="text" name="avatar" placeholder="Nom de votre avatar">
+                </div>
+                <div class="recherche">
+                    <input type="text" name="taille" placeholder="Taille en cm">
+                </div>
+                <div class="infos-avatar">
+                  <i class="fa fa-mars man" aria-hidden="true"></i>
+                  <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                    <label class="onoffswitch-label" for="myonoffswitch"></label>
+                  </div>
+                  <i class="fa fa-venus woman" aria-hidden="true"></i>
+                </div>
+              </form>
+            </div>
+            <div>
+              <input type="submit" class="hvr-btn" value="Submit">
+            </div>
+          </div>
+          <div id="admin-rwd">
+            <a href="javascript:;" class="close-rwd">
+              <p class="txt-admin">Ajouter une<br/>personnalité</p><i class="icn-admin icon-add-man"></i>
+            </a>
+            <div>
+              <h4>Ajouter une personnalité</h4>
+              <p>
+                Recherchez une personnalité dans le champ ci-dessous pour pouvoir comparer sa taille.
+              </p>
+              <div class="recherche">
+                <form>
+                  <input type="text" name="perso" placeholder="Recherche une personnalité">
+                </form>
+              </div>
+            </div>
+            <div>
+              <h4>Ajouter votre propre avatar</h4>
+              <p>
+                Si vous souhaitez comparer votre propre taille ou celle de vos amis avec nos célébrités, remplissez les champs ci dessous :
+              </p>
+              <form>
+                <div class="recherche">
+                    <input type="text" name="avatar" placeholder="Nom de votre avatar">
+                </div>
+                <div class="recherche">
+                    <input type="text" name="taille" placeholder="Taille en cm">
+                </div>
+                <div class="infos-avatar">
+                  <i class="fa fa-mars man" aria-hidden="true"></i>
+                  <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch2" checked>
+                    <label class="onoffswitch-label" for="myonoffswitch"></label>
+                  </div>
+                  <i class="fa fa-venus woman" aria-hidden="true"></i>
+                </div>
+              </form>
+            </div>
+            <div>
+              <input type="submit" class="hvr-btn" value="Submit">
+            </div>
+          </div>         <!-- -->
+        </div>
+        <nav>
+          <div>
+            <i class="icon-man face"></i>
+            <p>
+              Barack <strong>Obama</strong>
+            </p>
+            <a href="#"><i class="icon-trash"></i></a>
+          </div>
+          <div>
+            <i class="icon-man face"></i>
+            <p>
+              Nicolas <strong>Sarkozy</strong>
+            </p>
+            <a href="#"><i class="icon-trash"></i></a>
+          </div>
+
+        </nav>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Copyright 2017 Ruler -  Nikolas Ethoré
+      </p>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="dist/js/app.min.js"></script>
+
+  </body>
+</html>
