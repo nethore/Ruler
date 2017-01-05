@@ -122,7 +122,7 @@ $(document).ready(function()
 
 			});
 			$("#admin-rwd").clearQueue().animate({
-				top : '-500px'
+				top : '-380px'
 			});
 			$('#admin-rwd').find('.icn-admin').addClass('icon-add-man').removeClass('icon-close-bold');
 			$('#admin-rwd').find('.txt-admin').show();

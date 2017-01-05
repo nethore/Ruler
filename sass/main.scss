@@ -87,6 +87,9 @@ body {
 	right:-55px;
   padding: 3px;
 }
+.close, .close:hover, .close:focus {
+  opacity: 1;
+}
 
 .close i {
   color: $primary-color;
@@ -111,6 +114,9 @@ body {
   padding:20px;
   font-size: 0.9rem;
   line-height: 1.4;
+}
+#help > div > p{
+  color: rgb(110, 110, 110);
 }
 
 .close-help {
@@ -219,6 +225,7 @@ header .logo i {
   background: radial-gradient(circle at 50% 50%, #233050, #0d0e14);
 
   flex-grow: 1;
+  display: flex;
   margin-bottom: 25px;
   min-height: 100%;
   position: relative;
@@ -253,7 +260,7 @@ header .logo i {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 
   h4 {
     text-transform: uppercase;
@@ -543,7 +550,7 @@ footer p {
 
 // Media queries
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1080px) {
   main {
     width: 100%;
   }
@@ -574,60 +581,66 @@ footer p {
   }
 }
 @media screen and (max-width: 500px) {
+
+  header {
+    padding: 10px 0;
+
+    .logo h3 {
+      display: none;
+    }
+
+    .logo i {
+      color: #fff;
+      font-size: 1.3rem;
+    }
+  }
+
+  footer {
+    display: none;
+  }
+  .welcome {
+    margin: 0 35px 0 75px;
+    h3 {
+      font-size: 2.4rem;
+    }
+    h4 i {
+      margin-left: 10px;
+    }
+    h3, h4 {
+      font-weight: 300;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
   .p:first-child {
-    margin-left: 20px;
+    margin-left: 10px;
+  }
+  .p:nth-child(1) {
+    margin-left: 10px;
   }
   .p:nth-child(2) {
     margin-left: 10px;
   }
   .p {
-    width: 50%;
-  }
-  nav {
-    width: 100%;
-
-    div {
-      width: 50%;
-      margin-left: 0;
-    }
+    width: 44%;
   }
 
-  nav > div:first-child {
-    margin-left: 0;
-  }
-
-
-  nav > div {
-    p {
-      flex-grow: 1;
-      font-weight: 300;
-      font-size: 0.8rem;
-      vertical-align: top;
-      margin: 2px 0 0 10px;
+  .body, .body-w {
+    margin-bottom: 15px;
+    img {
+    height: 18%;
+    margin-top: 0px;
     }
-    a {
-      color: rgba(255, 255, 255, 0.5);
-    }
-    .face {
-    }
-    i {
-      display: none;
-      font-size: 1.8rem;
-      vertical-align: top;
-    }
-  }
-
-  nav > div a:hover, nav > div a:active, nav > div a:focus {
-    color: #fff;
   }
 
   #admin-rwd {
     width:100%;
-    height:500px;
+    height:380px;
     position:absolute;
     right:0;
     left:0;
-    top:-500px;
+    top:-380px;
     z-index:6000;
     background: #fff;
     // background: radial-gradient(circle at 50% 50%, #cff0ff, #fff);
@@ -656,6 +669,15 @@ footer p {
       font-weight: 300;
       color: $primary-color;
     }
+    .recherche input[type=text].half-input:first-child  {
+      width:55%;
+    }
+    .recherche input[type=text].half-input:nth-child(2) {
+      width:40%;
+    }
+    .bouton-rwd {
+      margin-top:20px;
+    }
     .infos-avatar {
       margin: 25px 0;
       display: flex;
@@ -675,14 +697,14 @@ footer p {
       width:100%;
       cursor:pointer;
       border:0;
-      border-bottom: 3px solid #009fe0;
-      background: $primary-color;
+      border-bottom: 3px solid #cbcbcb;
+      background: #dedede;
       padding:10px;
       font-weight: 300;
-      color: #fff;
+      color: #6a6a6a;
     }
     input[type=submit]:active {
-      border-top: 3px solid #009fe0;
+      border-top: 3px solid #cbcbcb;
       border-bottom: 0;
     }
   }

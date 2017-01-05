@@ -2,7 +2,7 @@
 
   "use strict";
 
-  angular.module('ruler', ['ui.bootstrap', 'ui.bootstrap.typeahead'])
+  angular.module('ruler', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.typeahead'])
         .controller('persosCtrl', persosCtrl)
         .controller('addCtrl', addCtrl)
         .filter('selectById', function(){
@@ -38,17 +38,25 @@
 
     $scope.customGender = true;
 
-    $scope.persoSelected = [];
+    if (sessionStorage.getItem("ssCompare") === null) {
+      $scope.persoSelected = [];
+    } else {
+      $scope.persoSelected  = JSON.parse(sessionStorage.getItem("ssCompare"));
+    }
+
 
     $http.get("dist/datas/data.json").
           success(function(data, status) {
             console.log('JSON Gen : ', data);
           	$scope.persos = data;
+            if ($.inArray(9999, $scope.persoSelected) !== -1)
+            {
+              $scope.persos.push(JSON.parse(sessionStorage.getItem("ssCustom")));
+            }
             $scope.tabAutoComplete = [];
             for (var i = 0; i < $scope.persos.length; i++) {
               $scope.tabAutoComplete.push($scope.persos[i].firstname + " " + $scope.persos[i].lastname);
             }
-            console.log($scope.tabAutoComplete);
           });
 
     $scope.ngModelOptionsSelected = function(value) {
@@ -76,6 +84,8 @@
       }
 
       $scope.selected = "";
+
+      sessionStorage.setItem("ssCompare",JSON.stringify($scope.persoSelected));
 
     };
 
@@ -117,6 +127,9 @@
 
         console.log($scope.persos);
         console.log($scope.persoSelected);
+
+        sessionStorage.setItem("ssCompare",JSON.stringify($scope.persoSelected));
+        sessionStorage.setItem("ssCustom",JSON.stringify(customAvatar));
       }
 
     };
@@ -126,7 +139,8 @@
       var index = $scope.persoSelected.indexOf(id);
       $scope.persoSelected.splice(index, 1);
 
-      console.log($scope.persoSelected);
+      sessionStorage.setItem("ssCompare",JSON.stringify($scope.persoSelected));
+
     };
 
   }
