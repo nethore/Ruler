@@ -39,9 +39,8 @@
         <i class="icon-close"></i>
       </a>
   		<ul>
-  			<li class="active"><a href="#">Accueil</a></li>
-  			<li><a href="#">Statistiques</a></li>
-  			<li><a href="#">A propos</a></li>
+  			<li><a href="#/">Accueil</a></li>
+  			<li><a href="#/about">A propos</a></li>
   		</ul>
 	 </div>
    <div id="help">
@@ -78,142 +77,10 @@
         <a  href="javascript:;" class="help_btn"><i class="icon-help"></i></a>
       </div>
     </header>
-    <main ng-controller="persosCtrl">
-      <div class="compare">
-        <div class="window">
-          <div class="lines">
-            <ul>
-              <li><p>200</p></li>
-              <li><p>175</p></li>
-              <li><p>150</p></li>
-              <li><p>125</p></li>
-              <li><p>100</p></li>
-              <li><p>75</p></li>
-              <li><p>50</p></li>
-              <li><p>25</p></li>
-              <li><p>0</p></li>
-            </ul>
-          </div>
-          <div id="admin">
-            <a href="javascript:;" class="close-add">
-              <p class="txt-admin">Ajouter une<br/>personnalité</p><i class="icn-admin icon-add-man"></i>
-            </a>
-            <div>
-              <h4>Ajouter une personnalité</h4>
-            <form ng-submit="addPerso()">
-              <div class="recherche">
-                  <input type="text" ng-model="selected" uib-typeahead="selected for selected in tabAutoComplete | filter:$viewValue | limitTo:8" placeholder="Recherche une personnalité" ng-disabled="persoSelected.length >= 3">
-              </div>
-              <div>
-                <input type="submit" class="hvr-btn btn-top" value="Ajouter une personnalité">
-              </div>
-            </form>
-            </div>
-            <div>
-              <h4>Ajouter votre propre avatar</h4>
-              <form name="custom" ng-submit="addCustomPerso(custom.$valid)" novalidate>
-                <div class="recherche">
-                    <input type="text" name="firstname" ng-model="customFirstName" placeholder="Nom de votre avatar" required>
-                </div>
-                <div class="recherche">
-                    <input type="text" name="taille" ng-model="customSize" placeholder="Taille en cm" required ng-pattern="/^[0-9]{2,3}$/">
-                </div>
-                <div class="infos-avatar">
-                  <i class="fa fa-mars man" aria-hidden="true"></i>
-                  <div class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" ng-model="customGender" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                    <label class="onoffswitch-label" for="myonoffswitch"></label>
-                  </div>
-                  <i class="fa fa-venus woman" aria-hidden="true"></i>
-                </div>
-                <div>
-                  <input type="submit" class="hvr-btn" value="Ajouter votre avatar">
-                </div>
-                </form>
-            </div>
 
-          </div>
-          <div id="admin-rwd">
-            <a href="javascript:;" class="close-rwd">
-              <p class="txt-admin">Ajouter une<br/>personnalité</p><i class="icn-admin icon-add-man"></i>
-            </a>
-            <div>
-              <h4>Ajouter une personnalité</h4>
-            <form ng-submit="addPerso()">
-              <div class="recherche">
-                  <input type="text" ng-model="selected" uib-typeahead="selected for selected in tabAutoComplete | filter:$viewValue | limitTo:8" placeholder="Recherche une personnalité" ng-disabled="persoSelected.length >= 3">
-              </div>
-              <div class="bouton-rwd">
-                <input type="submit" class="hvr-btn btn-top" value="Ajouter une personnalité">
-              </div>
-            </form>
-            </div>
-            <div>
-              <h4>Ajouter votre propre avatar</h4>
-              <form name="custom" ng-submit="addCustomPerso(custom.$valid)" novalidate>
-                <div class="recherche">
-                    <input type="text" class="half-input" name="firstname" ng-model="customFirstName" placeholder="Nom" required>
-                    <input type="text" class="half-input" name="taille" ng-model="customSize" placeholder="Taille (cm)" required ng-pattern="/^[0-9]{2,3}$/">
-                </div>
-                <div class="infos-avatar">
-                  <i class="fa fa-mars man" aria-hidden="true"></i>
-                  <div class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" ng-model="customGender" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                    <label class="onoffswitch-label" for="myonoffswitch"></label>
-                  </div>
-                  <i class="fa fa-venus woman" aria-hidden="true"></i>
-                </div>
-                <div>
-                  <input type="submit" class="hvr-btn" value="Ajouter votre avatar">
-                </div>
-                </form>
-            </div>
+    <div class="main-route" ng-view>
+    </div>
 
-          </div>        <!-- -->
-        </div>
-        <!-- <nav>
-          <div>
-            <i class="icon-man face"></i>
-            <p>
-              Barack <strong>Obama</strong>
-            </p>
-            <a href="#"><i class="icon-trash"></i></a>
-          </div>
-          <div>
-            <i class="icon-man face"></i>
-            <p>
-              Nicolas <strong>Sarkozy</strong>
-            </p>
-            <a href="#"><i class="icon-trash"></i></a>
-          </div>
-
-        </nav> -->
-        <div class="welcome" ng-show="persoSelected.length == 0">
-          <h3>Bienvenue sur <span>Ruler</span> !</h3>
-          <h4> Commencez à ajouter des personnalités en utilisant le menu de droite <i class="fa fa-arrow-right" aria-hidden="true"></i></h4>
-        </div>
-        <div class="persos">
-
-          <div class="p" ng-repeat="perso in persos | selectById:persoSelected | limitTo:3 track by perso.id">
-            <div ng-class="perso.gender ? 'body' : 'body-w'" style="height: {{perso.size*79.5/200}}%">
-                <p class="size">
-                  <span class="taille">{{ perso.size }}</span><span class="cm"> cm</span>
-                </p>
-                <img ng-show="perso.id !== 9999" ng-src="img/{{ perso.picture }}" alt="{{ perso.firstname }}">
-            </div>
-            <div class="badge-nom">
-              <i ng-show="perso.gender" class="icon-man face"></i>
-              <i ng-show="!perso.gender" class="icon-woman face"></i>
-              <p>
-                {{ perso.firstname }} <strong>{{ perso.lastname }}</strong>
-              </p>
-              <a ng-click="deletePerso(perso.id)"><i class="icon-trash"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </main>
     <footer>
       <p>
         Copyright 2017 Ruler -  Nikolas Ethoré

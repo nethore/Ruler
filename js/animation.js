@@ -32,10 +32,6 @@ $(document).ready(function()
 
 	var isMenuOpen = false;
 	var isHelpOpen = false;
-	var isAddOpen = false;
-	var isAddRwdOpen = false;
-
-
 
 	$('.menu_btn').click(function()
 	{
@@ -66,71 +62,22 @@ $(document).ready(function()
 		}
 	});
 
-  $('.close-add').click(function()
+	$("#menu").find('a').click(function()
 	{
-		if (isAddOpen === false)
+		if (isMenuOpen === true)
 		{
-			$(this).clearQueue().animate({
-				width : '55px',
-				left: '-55px'
+			$("#menu").clearQueue().animate({
+				left : '-240px'
 			});
-			$("#admin").clearQueue().animate({
-				right : '0'
-			});
-			$('#admin').find('.icn-admin').removeClass('icon-add-man').addClass('icon-close-bold');
-			$('#admin').find('.txt-admin').hide();
 
-			isAddOpen = true;
-		}
-		else if (isAddOpen === true)
-		{
-			$(this).clearQueue().animate({
-				width : '160px',
-				left: '-160px'
+			$('.close').fadeOut(200);
 
-			});
-			$("#admin").clearQueue().animate({
-				right : '-280px'
-			});
-			$('#admin').find('.icn-admin').addClass('icon-add-man').removeClass('icon-close-bold');
-			$('#admin').find('.txt-admin').show();
-
-
-			isAddOpen = false;
+			isMenuOpen = false;
 		}
 	});
 
-	$('.close-rwd').click(function()
-	{
-		if (isAddRwdOpen === false)
-		{
-			$(this).clearQueue().animate({
-				width : '55px'
-			});
-			$("#admin-rwd").clearQueue().animate({
-				top : '0'
-			});
-			$('#admin-rwd').find('.icn-admin').removeClass('icon-add-man').addClass('icon-close-bold');
-			$('#admin-rwd').find('.txt-admin').hide();
-
-			isAddRwdOpen = true;
-		}
-		else if (isAddRwdOpen === true)
-		{
-			$(this).clearQueue().animate({
-				width : '160px'
-
-			});
-			$("#admin-rwd").clearQueue().animate({
-				top : '-380px'
-			});
-			$('#admin-rwd').find('.icn-admin').addClass('icon-add-man').removeClass('icon-close-bold');
-			$('#admin-rwd').find('.txt-admin').show();
 
 
-			isAddRwdOpen = false;
-		}
-	});
 
 	$('.help_btn').click(function()
 	{
