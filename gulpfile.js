@@ -44,7 +44,7 @@ gulp.task('browser-sync', function() {
 
 // reload a server
 gulp.task('browser-reload', function() {
-    reload({ stream: true, reload: once });
+    reload({ stream: false });
 });
 
 // Clean log, comments, remove old files

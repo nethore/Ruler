@@ -104,7 +104,7 @@
         </div>
         <div>
           <h4>Ajouter votre propre avatar</h4>
-          <form name="custom" ng-submit="addCustomPerso(custom.$valid)" novalidate>
+          <form ng-submit="addCustomPerso(custom.$valid)" novalidate>
             <div class="recherche">
                 <input type="text" name="firstname" ng-model="customFirstName" placeholder="Nom de votre avatar" required>
             </div>
@@ -192,7 +192,7 @@
             <p class="size">
               <span class="taille">{{ perso.size }}</span><span class="cm"> cm</span>
             </p>
-            <img ng-show="perso.id !== 9999" ng-src="img/{{ perso.picture }}" alt="{{ perso.firstname }}">
+            <img ng-show="perso.id !== 9999" ng-src="img/{{ perso.pictureUrl }}" alt="{{ perso.firstname }}">
         </div>
         <div class="badge-nom">
           <i ng-show="perso.gender" class="icon-man face"></i>

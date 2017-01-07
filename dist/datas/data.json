@@ -4,7 +4,7 @@
     "firstname": "Nicolas",
     "lastname": "Sarkozy",
     "gender": true,
-    "picture": "sarkozy.png",
+    "pictureUrl": "sarkozy.png",
     "size": 165
   },
   {
@@ -12,7 +12,7 @@
     "firstname": "Barack",
     "lastname": "Obama",
     "gender": true,
-    "picture": "obama.png",
+    "pictureUrl": "obama.png",
     "size": 185
   },
   {
@@ -20,7 +20,7 @@
     "firstname": "Donald",
     "lastname": "Trump",
     "gender": true,
-    "picture": "trump.png",
+    "pictureUrl": "trump.png",
     "size": 191
   },
   {
@@ -28,7 +28,7 @@
     "firstname": "Segolene",
     "lastname": "Royale",
     "gender": false,
-    "picture": "blank.png",
+    "pictureUrl": "blank.png",
     "size": 167
   },
   {
@@ -36,7 +36,7 @@
     "firstname": "Hilary",
     "lastname": "Clinton",
     "gender": false,
-    "picture": "clinton.png",
+    "pictureUrl": "clinton.png",
     "size": 169
   }
 ]

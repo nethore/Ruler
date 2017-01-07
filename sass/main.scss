@@ -391,10 +391,15 @@ header .logo i {
   .cm {
     font-weight: 300;
   }
-  img {
-  height: 18%;
-  margin-top: 0px;
-  }
+}
+.body img {
+height: 18%;
+margin-top: 0px;
+}
+
+.body-w img {
+height: 17%;
+margin-top: 0px;
 }
 
 .badge-nom {
@@ -504,9 +509,12 @@ footer p {
 
 .about {
   border-radius: 2px;
-  background: #fff;
-  background: radial-gradient(circle at 50% 50%, #dfeef2, #fff);
 
+  background: #fff;
+  background-image: url('../../img/bg-about.png');
+  background-size: cover;
+  background-position: left center;
+  // background: radial-gradient(circle at 50% 50%, #dfeef2, #fff);
   flex-grow: 1;
   display: flex;
   min-height: 100%;

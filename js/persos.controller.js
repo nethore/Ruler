@@ -114,7 +114,7 @@
           "firstname": "",
           "lastname": $scope.customFirstName,
           "gender": !$scope.customGender,
-          "picture": "blank.png",
+          "pictureUrl": "blank.png",
           "size": size
         };
 
