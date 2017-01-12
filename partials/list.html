@@ -1,0 +1,43 @@
+<main ng-controller="listCtrl">
+  <div class="list">
+    <div class="content-list">
+      <h3>Listes des personnalités en <span style="text-transform:uppercase;font-weight:normal;">{{ lettre }}</span></h3>
+      <div class="letters">
+        <a href="#/list/a">a</a>
+        <a href="#/list/b">b</a>
+        <a href="#/list/c">c</a>
+        <a href="#/list/d">d</a>
+        <a href="#/list/e">e</a>
+        <a href="#/list/f">f</a>
+        <a href="#/list/g">g</a>
+        <a href="#/list/h">h</a>
+        <a href="#/list/i">i</a>
+        <a href="#/list/j">j</a>
+        <a href="#/list/k">k</a>
+        <a href="#/list/l">l</a>
+        <a href="#/list/m">m</a>
+        <a href="#/list/n">n</a>
+        <a href="#/list/o">o</a>
+        <a href="#/list/p">p</a>
+        <a href="#/list/q">q</a>
+        <a href="#/list/r">r</a>
+        <a href="#/list/s">s</a>
+        <a href="#/list/t">t</a>
+        <a href="#/list/u">u</a>
+        <a href="#/list/v">v</a>
+        <a href="#/list/w">w</a>
+        <a href="#/list/x">x</a>
+        <a href="#/list/y">y</a>
+        <a href="#/list/z">z</a>
+      </div>
+      <div class="columns">
+        <ul>
+          <li ng-repeat="perso in persos | selectByLtr:lettre | limitTo:30 | orderBy:'-' track by perso.id">
+            
+            {{ perso.firstname }} <strong>{{ perso.lastname }}</strong> ({{ perso.size }} cm)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>

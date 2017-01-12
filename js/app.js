@@ -9,6 +9,10 @@
                         templateUrl: 'partials/home.html',
                         controller: 'persosCtrl',
                     })
+                    .when('/list/:ltr?', {
+                        templateUrl: 'partials/list.html',
+                        controller: 'listCtrl',
+                    })
                     .when('/about', {
                         templateUrl: 'partials/about.html',
                     })

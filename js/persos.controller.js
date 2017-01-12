@@ -37,7 +37,7 @@
           };
         });
 
-  function persosCtrl($scope, $http){
+  function persosCtrl($scope, $http, $filter){
 
     console.log("Scope Chargée");
 
@@ -49,20 +49,31 @@
       $scope.persoSelected  = JSON.parse(sessionStorage.getItem("ssCompare"));
     }
 
-
-    $http.get("dist/datas/data.json").
+    $http.get("/json").
           success(function(data, status) {
             console.log('JSON Gen : ', data);
-          	$scope.persos = data;
+
+            $scope.persos = data;
+
+          	// $scope.persos = data;
             if ($.inArray(9999, $scope.persoSelected) !== -1)
             {
               $scope.persos.push(JSON.parse(sessionStorage.getItem("ssCustom")));
             }
+
             $scope.tabAutoComplete = [];
+
             for (var i = 0; i < $scope.persos.length; i++) {
-              $scope.tabAutoComplete.push($scope.persos[i].firstname + " " + $scope.persos[i].lastname);
+
+              if ($scope.persos[i] !== undefined) {
+                $scope.tabAutoComplete[$scope.persos[i].id] = $scope.persos[i].firstname + " " + $scope.persos[i].lastname;
+              }
+
             }
+            console.log("TabAutoComplete", $scope.tabAutoComplete);
+
           });
+
 
     $scope.ngModelOptionsSelected = function(value) {
       if (arguments.length) {

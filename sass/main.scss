@@ -467,6 +467,16 @@ margin-top: 0px;
     font-weight: bold;
   }
 }
+.shaking-arrow {
+  color: #fff;
+  text-align: right;
+  flex-grow: 1;
+  align-self: center;
+  margin-right: 200px;
+  i {
+    font-size: 3rem;
+  }
+}
 
 .lines {
   ul {
@@ -541,6 +551,52 @@ footer p {
       font-size:3.7rem;
       text-transform: uppercase;
       font-weight: 300;
+    }
+  }
+}
+
+.list {
+  border-radius: 2px;
+
+  background: #fff;
+  background: radial-gradient(circle at 50% 50%, #dfeef2, #fff);
+  flex-grow: 1;
+  display: flex;
+  min-height: 100%;
+
+  -moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+
+  .content-list {
+    margin: 25px 5%;
+    width: 100%;
+    h3 {
+      color: $primary-color;
+      font-size:3.5rem;
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+    .letters {
+      a {
+        text-transform: uppercase;
+        color: $secondary-color;
+        margin-right: 5px;
+      }
+      margin-bottom: 35px;
+    }
+    .columns {
+      column-count: 4;
+      column-width: 18%; /* Colonnes de 150 pixels de largeur */
+      ul {
+        padding:0;
+        li {
+          list-style: none;
+          margin-bottom: 15px;
+          color: #3c3c3c;
+        }
+      }
     }
   }
 }
@@ -625,6 +681,17 @@ footer p {
 }
 @media screen and (max-width: 500px) {
 
+  .list .content-list h3 {
+    font-size: 1.7rem;
+  }
+
+  .list .content-list .columns {
+    column-count: 1;
+  }
+
+  .shaking-arrow {
+    display: none;
+  }
   header {
     padding: 10px 0;
 
